@@ -13,4 +13,8 @@ public class GrossPrice {
 }
 
 
-
+// Zapytaj użytkownika czy wczytać predefinowane kategorie lub czy che wczytać swoje, zakończyć ENDem
+// niech poda kategorie
+// niech uzytkownik dsoda produkty, ..., zakończenie wpisać END (Zapytaj użytkownika o podanie kategorii. )
+// przed każdym wczytaniem produktu wyświtla lstę z kategoriami
+// Oblicz sumę cen brutto dla produktów należacych tylko do tej kategorii. --> zapytaj uźytkownika, którą kategorię chce zobaczyć
