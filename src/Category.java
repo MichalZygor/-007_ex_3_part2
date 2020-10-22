@@ -3,6 +3,15 @@ public class Category {
     private double tax;
     private int id;
 
+    public Category() {
+    }
+
+    public Category(String name, double tax, int id) {
+        this.name = name;
+        this.tax = tax;
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
