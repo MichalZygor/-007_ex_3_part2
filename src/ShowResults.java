@@ -9,23 +9,21 @@ public class ShowResults {
         int idCategoryToShow = scanner.nextInt();
 
         double sum = 0;
-        for (Category valueCategories : categories){
-            for (Product valueProducts : products) {
-                if ((valueProducts.getCategoryId()== idCategoryToShow && valueCategories.getId() == idCategoryToShow) ){
-                    sum += (valueProducts.getNettPrice() * ((valueCategories.getTax() / 100) + 1));
-                    System.out.println(valueProducts.getNettPrice());
-                }
+        for (Product valueProducts : products) {
+            if ((valueProducts.getCategoryId() == idCategoryToShow)) {
+                sum += (valueProducts.getNettPrice() * ((categories[idCategoryToShow - 1].getTax() / 100) + 1));
             }
         }
-        System.out.println("Suma cen brutto dla produktów należących do kategorii '" + categories[idCategoryToShow-1].getName()
-                + "' o id: " + idCategoryToShow + " wynosi: " + sum);
+        System.out.printf("Suma cen brutto dla produktów należących do kategorii '%s' id:%d wynosi %.2f",
+                categories[idCategoryToShow - 1].getName(), idCategoryToShow, sum);
     }
 
-    public void showCategories(Category[] categories){
+    public void showCategories(Category[] categories) {
         System.out.print("Aktualne kategorie to: ");
-        for (Category valueCategories : categories){
+        for (Category valueCategories : categories) {
             System.out.print("id:" + valueCategories.getId() + " - '" + valueCategories.getName() + "' (" + valueCategories.getTax() + "%), ");
         }
+        System.out.println("");
     }
 
 }
